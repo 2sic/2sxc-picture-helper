@@ -3,7 +3,7 @@
     A helper utility to render a picture tag with all sizes.
     Parameters:
     * imageSrc: the image source path
-    * imageRatio: the image ratio, e.g. for 4:3: 4.0/3.0 (attention: needs the .0 to be treated as double)
+    * imageRatio: the image ratio, e.g. for 4:3: 4.0/3.0 (attention: needs the .0 to be treated as double; use 0 to disable height restriction)
     * qualityDefault: used for the 1x and fallback image; usually a higher value than qualityHighRes, e.g. 95
     * qualityHighRes: used for sizes > 1, e.g. 85
     * defaultParameters: define additional parameters like crop and scale
@@ -14,7 +14,7 @@
     @{
         var helper = CreateInstance("_Helper-Picture.cshtml");
     }
-    @(helper.Picture(Content.Image, 4.0/3.0, 95, 85,"mode=crop&scale=both", Content.Title, new[] { 720, 464, 244, 290, 390 }))
+    @(helper.Picture(Content.Image, 4.0/3.0, 95, 85, "mode=crop&scale=both", Content.Title, new[] { 720, 464, 244, 290, 390 }))
 
 *@
 @helper Picture(string imageSrc, double imageRatio, int qualityDefault, int qualityHighRes, string defaultParameters, string alternativeText, int[] sizes)
