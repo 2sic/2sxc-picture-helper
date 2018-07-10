@@ -1,0 +1,5 @@
+@{
+    var helper = CreateInstance("_Helper-Picture.cshtml");
+}
+
+@(helper.Picture(Content.Image, 4.0/3.0, 95, 85,"mode=crop&scale=both", Content.Title, new[] { 720, 464, 244, 290, 390 }))
